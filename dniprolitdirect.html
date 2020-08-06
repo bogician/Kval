@@ -1,0 +1,108 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Маршрут</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<style>
+	A {
+    text-decoration: none; 
+   } 
+	
+    </style>
+</head>
+
+<body bgcolor="EFEFEF">
+	<div id="container">
+		<div id = "forheader"></div>
+	<div id="header"  style="padding: 0;">
+		<a href="http://www.dnu.dp.ua/">
+		<span id="gerb">
+							<img src="http://www.dnu.dp.ua/images/gerb_small.png" />
+			</span></a>
+			<a href="main menu.html">
+						<span id="name1">
+							Аудиторія-музей "Літературне Придніпров'я"<br /> Дніпровського національногоуніверситету імені Олеся Гончара
+			</span><br /></a>
+		</div>
+		<div id="leftdd">
+	<ul id="navbar">
+		<!--створюємо меню сайту-->
+  <li><a href="main menu.html">Головна</a></li>
+		<li><a href="galery.html">Подорож аудиторією-музеєм</a></li>
+  <li><a href="litmappridn.html">Літературна карта Придніпров'я</a></li>
+  <li><a href="dniprolit.html">Дніпро літературний</a></li>
+  <li><a href="pismDOONSPU.php">Письменники ДООНСПУ</a></li>
+		<li><a href="adressandcontakts.html">Адреса і контакти</a></li>
+</ul>
+</div>	
+	<div id="content1">
+		<h1><p align="center">Літературне Придніпров'я</p></h1>
+			
+		
+		
+		<div id="map"></div>
+		<!--створюємо блок для вибору способа подорожі-->
+<div id="floating-panel">
+    <b>Як ви будете подрожувати?: </b>
+    <select id="mode">
+		<!--додаємо значення до випадаючого вікна-->
+      <option value="DRIVING">Машиною</option>
+      <option value="WALKING">Пішки</option>
+    </select>
+    </div>
+    <script>
+		//створюємо скріпт для мапи з маршрутом
+      function initMap()//ініціалізуємо мапу 
+		{
+        var directionsDisplay = new google.maps.DirectionsRenderer;//створюємо дисплеї для кастомізації карти та вказуємо, що будемо прокладати маршрут
+        var directionsService = new google.maps.DirectionsService;
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom:13,
+	center:{lat:48.4700000,lng:35.010000}
+        });//створюємо мапу
+        directionsDisplay.setMap(map);
+
+        calculateAndDisplayRoute(directionsService, directionsDisplay);
+        document.getElementById('mode').addEventListener('change', function() {
+          calculateAndDisplayRoute(directionsService, directionsDisplay); //ініціалізуємо ф-ію для прокладання маршруту та аідключаємо дисплей вибору способу подорожі
+        });
+      }
+
+      function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+        var selectedMode = document.getElementById('mode').value; //обираємо способ подорожі
+        directionsService.route({
+          origin: {lat:48.43334,lng:35.04322},  
+waypoints:[{location:{lat:48.46047,lng:35.0685} }, {location:{lat:48.46799,lng:35.04037} }],
+optimizeWaypoints: true,
+          destination:{lat:48.51681,lng:34.99301},//додаємо початкову кінцеву та серединні точки маршруту
+          
+  
+          
+          travelMode: google.maps.TravelMode[selectedMode]//функція для обрання способу подорожі
+        }, function(response, status) {
+          if (status == 'OK') {
+            directionsDisplay.setDirections(response);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }//пперевірка статусу та вивід мапи
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG0EAGJ5JSvtSAVVt0_tWUxxs-cZeAxHM&callback=initMap&language=uk">
+		//підключення самого файлу мапи через Google Maps API
+    </script>
+<FONT SIZE="4" FACE=" Verdana, sans-serif" ><p align = "left">&nbsp; &nbsp; &nbsp;Свою подорож пропонуємо розпочати з проспекту Гагаріна 72, де ви можете відвідати аудиторію-музей "Літературне Придніпров'я" та іменні аудиторії Олеся Гончара та Павла Загребельного. Тут ви можете дізнатися про розвиток літератури рідного краю, дослідити життя письменників і ознайомитися з творами Ваших 
+	найулюбленіших.<br>&nbsp; &nbsp; &nbsp; Наступним кроком подорожі може стати Меморіальний будинок Дмитра Яворницького за адресою площа Шевченка, 5, у якому жив і працював цей видатний український вчений-історик, археолог, етнограф, фольклорист, письменник і лексикограф, академік АН УРСР. З листопада 1988 р. тут відкрито меморіальний будинок-музей. Кімнати відновлені такими, якими вони були за життя Яворницького: вестибюль, передпокій, кабінет, світлиця, їдальня. В одній з кімнат розташовані матеріали про подвижницьку діяльність ученого, спадщина якого належить до кращих надбань української культури.<br>
+	&nbsp; &nbsp; &nbsp;На проспекті Дмитра Яворницького 64 розташувався музей "Літературне Придніпров'я". У зібраннях музею — рукописи художніх творів, книги, документи, фотографії, особисті речі видатних письменників, фольклористів, діячів театру XVIII—XX століть. Серед експонатів матеріали, що розповідають про зв'язки з краєм Тараса Шевченка, Олександра Пушкіна, Миколи Гоголя, Олеся Гончара, Марка Кропивницького, Івана Карпенка-Карого, Івана Буніна, Володимира Гіляровського, Олександра Афанасьєва-Чужбинського, Василя Мисика, Булаєнко, Павла Загребельного; про творчу долю Олени Ган, Миколи Мізко, Володимира Єлагіна, Івана Манжури, Тетяни Сулими-Бичихіної, Миколи Бикова, Якова Новицького, Валер'яна Підмогильного, Григорія Епіка.
+<br>&nbsp; &nbsp; &nbsp; Останньою точкою вашого маршруту стане садиба-музей Олеся Гончара за адресою вулиця Клубна, 20. Тут у нелегкі післявоєнні роки жив і писав свої знамениті «Прапороносці» Олесь Гончар. У кабінеті письменника й досі відчувається його незрима присутність: Олесь Гончар живе у портретах, прикрашених вишитими рушниками, у книжках із автографами, на письмовому столі лежить недописаний аркуш думок письменника.	</p></FONT>
+	</div>
+	<div id="Clear"></div>
+	<div id="rasporka"></div>
+	</div>
+	<div id="footer">
+		<font SIZE="3" FACE="Arial" Color = "#E0E0E0">2018 Дніпро</font>
+	</div>
+</body>
+</html>

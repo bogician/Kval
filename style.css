@@ -1,0 +1,245 @@
+@charset "utf-8";
+#navbar {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+		  background-color:#34369F;
+        width: 250px;
+		
+      }
+      
+      #navbar a {
+        background-color: #34369F;
+        color:#D9D7E3;
+        padding: 35px;
+        text-decoration: none;
+        font-weight: bold;
+        display: block;
+      }
+      #navbar a:hover {
+        background-color:#D9D7E3;
+       color: #34369F;
+}
+body, html{
+	font-family: Verdana, sans-serif;
+	margin:0px;
+	padding:0px;
+	height: 100%;
+	text-align: center;
+}
+#container{
+	width: 100%;
+	min-height:100%;
+	margin: 0 auto;
+	text-align: left;
+}
+* html #container{
+height:100%;
+}
+#forheader{
+	background-color: #281F96;
+	height: 20px;
+}
+#header{
+	background-color: #281F96;
+	height: 115px;
+}
+#map {
+        height: 700px;
+		width: 100%;
+      }
+#floating-panel {
+       
+top: 50px;
+        left: 50%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+#left{
+	background-color: #34369F;
+	width: 250px;
+	height:3000px;
+	float: left;
+}
+#lefts{
+	background-color: #34369F;
+	width: 250px;
+	height:820px;
+	float: left;
+}
+#leftg{
+	background-color: #34369F;
+	width: 250px;
+	height:800px;
+	float: left;
+}
+#leftl{
+	background-color: #34369F;
+	width: 250px;
+	height:1200px;
+	float: left;
+}
+
+#leftd{
+	background-color: #34369F;
+	width: 250px;
+	height:900px;
+	float: left;
+}
+#leftdd{
+	background-color: #34369F;
+	width: 250px;
+	height:1300px;
+	float: left;
+}
+#content{
+	background-color:#EFEFEF;
+	margin-left:251px;
+		
+}
+#content1{
+	background-color:#EFEFEF;
+	margin-left:260px;
+	margin-right:10px;
+		
+}
+#Clear{
+	background-color:#EFEFEF;
+	height: 0;
+	font-size: 1px;
+	line-height: 0px;
+	clear: both;
+}
+#gerb
+{
+	float:left;
+	margin: 0 16px 0 -35px;
+	padding: 8px 8px 8px 80px;
+	background: #fff;
+	border-radius: 0px 5px 5px 0px;
+}
+#name1
+{
+	font-size: 24px;
+	color: #fff;
+}
+
+#rasporka{
+height:20px;
+}
+#map1{
+	position: relative;
+	text-align: center;
+}
+svg{
+	position: absolute;
+
+}
+.part {
+	opacity: .1;
+
+}
+.part:hover{
+	transition: opacity .2s ease;
+	opacity: 1;
+}
+.part1 {
+	opacity: .1;
+
+}
+.part1:hover{
+	transition: opacity .2s ease;
+	opacity: 1;
+}
+.part2 {
+	opacity: .1;
+
+}
+.part2:hover{
+	transition: opacity .2s ease;
+	opacity: 1;
+}
+.description{
+	position: absolute;
+	padding: 20px;
+	box-sizing: border-box;
+	width: 400px;
+	height: 700px;
+	box-shadow: 0 0 32px 10px #ccc;
+	background-color: #FFFFFF;
+	left: 5px;
+	top: 80px;
+	display: none;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	
+}
+.description2{
+	position: absolute;
+	padding: 20px;
+	box-sizing: border-box;
+	width: 400px;
+	height: 700px;
+	box-shadow: 0 0 32px 10px #ccc;
+	background-color: #FFFFFF;
+	right: 5px;
+	top: 80px;
+	display: none;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	
+}
+.description3{
+	position: absolute;
+	padding: 20px;
+	box-sizing: border-box;
+	width: 900px;
+	height: 700px;
+	box-shadow: 0 0 32px 10px #ccc;
+	background-color: #FFFFFF;
+	left: 200px;
+	top: 80px;
+	display: none;
+	text-align: left;
+	/*font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";*/
+	column-count: 2;
+	
+}
+.description img{
+	width: 400;
+	margin-bottom: 20px;
+	
+}
+	.description2 img{
+	width: 400;
+	margin-bottom: 20px;
+	
+}
+.description3 img{
+	width: 400;
+	margin-bottom: 20px;
+	
+}
+#footer{
+	
+background-color: #281F96;
+	height:20px;
+margin-top:-20px;
+}
+
+#gallery img{
+	margin: 3px;
+	border:  solid #34369F;
+}
+a.photo:hover{
+	background: #34369F;
+}
+.photomain{
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}

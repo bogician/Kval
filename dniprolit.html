@@ -1,0 +1,140 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Дніпро літературний</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<style>
+	
+	
+	
+	#map{
+		height: 630px;
+		width: 100%;
+	}
+	A {
+    text-decoration: none; 
+   } 
+      
+    </style>
+</head>
+
+<body bgcolor="EFEFEF">
+	<div id="container">
+		<div id = "forheader"></div>
+	<div id="header"  style="padding: 0;">
+		<a href="http://www.dnu.dp.ua/">
+		<span id="gerb">
+							<img src="http://www.dnu.dp.ua/images/gerb_small.png" />
+			</span></a>
+			<a href="main menu.html">
+						<span id="name1">
+							Аудиторія-музей "Літературне Придніпров'я"<br />Дніпровського національного університету імені Олеся Гончара
+			</span><br /></a>
+		</div>
+		<div id="leftd">
+	<ul id="navbar">
+		<!--створюємо меню сайту-->
+  <li><a href="main menu.html">Головна</a></li>
+		<li><a href="galery.html">Подорож аудиторією-музеєм</a></li>
+  <li><a href="litmappridn.html">Літературна карта Придніпров'я</a></li>
+  <li><a href="dniprolit.html">Дніпро літературний</a></li>
+  <li><a href="pismDOONSPU.php">Письменники ДООНСПУ</a></li>
+		<li><a href="adressandcontakts.html">Адреса і контакти</a></li>
+</ul>
+</div>	
+	<div id="content1">
+		<h1><p align="center">Літературне Придніпров'я</p></h1>
+		<h3><p align="left" >&nbsp; &nbsp; &nbsp; Це карта з пам'ятними літературними місцями міста Дніпро. За бажанням можна організувати екскурсію містом, вивчаючи нові імена і факти з життя письменників рідного краю. Натиснувши на маркер, ви побачите інформацію про цю пам'ятку.  Також ви можете прокласти оптимальний <!--посилання на сторінку з маршрутом--><a href="dniprolitdirect.html">маршрут</a> між пам'ятками </p></h3>
+		
+		<div id="map">
+			<!--створюємо скрипт для створення і налаштування мапи Google Maps Api for JavaScript-->
+		<script>
+		//ініціалізуємо мапу
+		function initMap(){
+			var options = {
+				zoom:12,
+				center:{lat:48.4700000,lng:35.010000}
+			}
+			var map = new google.maps.Map(document.getElementById('map'), options);
+			//1 маркер
+			var marker1 = new google.maps.Marker({
+				position:{lat:48.51681,lng:34.99301},//локація маркера
+				map:map, 
+				draggable: false,//можливість переносу
+          		animation: google.maps.Animation.DROP//анімація маркеру
+			});
+			//додаємо інформацію за кліком
+			var infovindow1 = new google.maps.InfoWindow({
+				content:'Садиба-музей Олеся Гончара'
+			})
+			//викликаємо опис
+			marker1.addListener('click', function(){
+				infovindow1.open(map,marker1);
+			})
+			
+			//2 маркер
+			var marker2 = new google.maps.Marker({
+				position:{lat:48.46799,lng:35.04037},
+				map:map, 
+				draggable: false,
+				
+          animation: google.maps.Animation.DROP
+			});
+			var infovindow2 = new google.maps.InfoWindow({
+				content:'Музей "Літературне Придніпров`я"'
+			})
+			marker2.addListener('click', function(){
+				infovindow2.open(map,marker2);
+			})
+			
+			//3 маркер
+			
+			var marker3 = new google.maps.Marker({
+				position:{lat:48.43334,lng:35.04322},
+				map:map, 
+				draggable: false,
+				
+          animation: google.maps.Animation.DROP
+			});
+			var infovindow3 = new google.maps.InfoWindow({
+				content:'Аудиторія-музей "Літературне Придніпров`я", іменні аудиторії Олеся Гончара та Павла Загребельного'
+			})
+			marker3.addListener('click', function(){
+				infovindow3.open(map,marker3);
+			})
+			
+			//4 маркер
+			var marker4 = new google.maps.Marker({
+				position:{lat:48.46047,lng:35.0685},
+				map:map, 
+				draggable: false,
+				
+          animation: google.maps.Animation.DROP
+			});
+			var infovindow4 = new google.maps.InfoWindow({
+				content:'Меморіальний будинок-музей Дмитра Яворницького'
+			})
+			marker4.addListener('click', function(){
+				infovindow4.open(map,marker4);
+			})
+			
+		}
+			
+		</script>
+			<!--підключаємо саму мапу як скріпт. Можна побачити вибір мови мапи прямо у посиланні-->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG0EAGJ5JSvtSAVVt0_tWUxxs-cZeAxHM&callback=initMap&language=uk"
+    async defer></script>
+		
+		</div>
+		
+		
+		</div>	
+	<div id="Clear"></div>
+	<div id="rasporka"></div>
+	</div>
+	<div id="footer">
+		<font SIZE="3" FACE="Arial" Color = "#E0E0E0">2018 Дніпро</font>
+	</div>
+</body>
+</html>
